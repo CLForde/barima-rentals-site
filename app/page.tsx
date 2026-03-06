@@ -77,6 +77,38 @@ export default function BarimaRentalsHome() {
           </div>
         </div>
       </section>
+      <section className='bg-gray-100 py-16'>
+        <div className='max-w-5xl mx-auto px-6 text-center'>
+          <h2 className='text-3xl font-bold mb-10'>Our Locations</h2>
+
+          <div className='grid md:grid-cols-2 gap-8 text-left'>
+            <div className='bg-white p-6 rounded-xl shadow'>
+              <h3 className='font-semibold text-lg'>Kitty Location</h3>
+
+              <p className='mt-3'>
+                Lot 6 "D" Station Street Kitty, Georgetown, Guyana
+              </p>
+
+              <p className='mt-3 text-sm text-gray-600'>
+                Located about 4 houses away from Seeta's Bar.
+              </p>
+            </div>
+
+            <div className='bg-white p-6 rounded-xl shadow'>
+              <h3 className='font-semibold text-lg'>Liliendaal Location</h3>
+
+              <p className='mt-3'>
+                Lot A Rupert Craig Highway Liliendaal, East Coast Demerara,
+                Guyana
+              </p>
+
+              <p className='mt-3 text-sm text-gray-600'>
+                Located next to Scotty's Smoke House.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CONTACT */}
       <section className='py-20 text-center'>
@@ -90,6 +122,21 @@ export default function BarimaRentalsHome() {
           Contact on WhatsApp
         </a>
       </section>
+      <footer className='bg-gray-900 text-white py-8 text-center'>
+        <p className='font-semibold text-lg'>Barima Rentals</p>
+
+        <p className='mt-3 text-sm'>Construction Equipment Rentals</p>
+
+        <p className='mt-3 text-sm'>
+          Lot 6 "D" Station Street, Kitty, Georgetown
+        </p>
+
+        <p className='text-sm'>Lot A Rupert Craig Highway, Liliendaal E.C.D</p>
+
+        <p className='mt-4 text-sm'>
+          © {new Date().getFullYear()} Barima Rentals
+        </p>
+      </footer>
     </main>
   );
 }
