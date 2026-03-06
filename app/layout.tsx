@@ -12,10 +12,28 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-  title: 'Barima Rentals - Construction Equipment',
+export const metadata = {
+  title: 'Barima Rentals | Construction Equipment Rentals',
   description:
-    'Scaffold, Concrete Mixer, and Plate Compactor Rentals in Georgetown, Guyana',
+    'Barima Rentals provides scaffolds, concrete mixers and plate compactors for contractors, builders and homeowners in Georgetown and East Coast Demerara, Guyana.',
+
+  openGraph: {
+    title: 'Barima Rentals',
+    description:
+      'Reliable construction equipment including scaffolds, concrete mixers and plate compactors.',
+    url: 'https://barima-rentals-site.vercel.app',
+    siteName: 'Barima Rentals',
+    images: [
+      {
+        url: '/images/hero.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Barima Rentals Equipment',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

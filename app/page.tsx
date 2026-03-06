@@ -1,69 +1,120 @@
 export default function BarimaRentalsHome() {
   return (
     <main className='min-h-screen bg-gray-50 text-gray-800'>
-      <header className='bg-gray-900 text-white py-4'>
-        <div className='max-w-5xl mx-auto flex justify-between items-center px-6'>
-          <h1 className='font-bold text-lg'>Barima Rentals</h1>
+      <nav className='bg-gray-900 text-white sticky top-0 z-50 shadow'>
+        <div className='max-w-6xl mx-auto px-6 py-4 flex justify-between items-center'>
+          <div>
+            <div className='flex items-center gap-3'>
+              <img
+                src='/images/barima-logo.jpeg'
+                alt='Barima Rentals Logo'
+                className='h-10 w-auto'
+              />
+
+              <div>
+                <h1 className='font-bold text-lg'>Barima Rentals</h1>
+                <p className='text-xs text-gray-300'>
+                  Construction Equipment Rentals
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className='space-x-4 text-sm font-medium flex flex-wrap items-center'>
+            <a href='#equipment' className='hover:text-green-400'>
+              Equipment
+            </a>
+            <a href='#locations' className='hover:text-green-400'>
+              Locations
+            </a>
+            <a href='#contact' className='hover:text-green-400'>
+              Contact
+            </a>
+          </div>
 
           <a
             href='https://wa.me/5926275775'
-            className='bg-green-500 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-600'
+            className='bg-green-500 px-4 py-2 rounded-lg font-semibold hover:bg-green-600'
           >
-            WhatsApp Us
+            WhatsApp
           </a>
         </div>
-      </header>
-      {/* HERO SECTION */}
-      <section className='text-center py-20 bg-white shadow'>
-        <h1 className='text-5xl font-bold'>BARIMA RENTALS</h1>
-        <p className='mt-4 text-lg'>Reliable Construction Equipment</p>
+      </nav>
 
-        <a
-          href='https://wa.me/5926275775'
-          className='inline-block mt-6 bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600'
-        >
-          Message on WhatsApp
-        </a>
+      {/* HERO SECTION */}
+      <section className='relative h-[420px] flex items-center justify-center text-white'>
+        <img
+          src='/images/hero.jpg'
+          alt='Barima Rentals Equipment'
+          className='absolute w-full h-full object-cover'
+        />
+
+        <div className='absolute inset-0 bg-black/60'></div>
+
+        <div className='relative z-10 text-center px-6'>
+          <h1 className='text-4xl md:text-5xl font-bold'>
+            Reliable Construction Equipment
+          </h1>
+
+          <p className='mt-4 text-lg max-w-xl mx-auto'>
+            Scaffolds, concrete mixers and plate compactors available for
+            contractors, builders and homeowners.
+          </p>
+
+          <a
+            href='https://wa.me/5926275775'
+            className='inline-block mt-8 bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600'
+          >
+            Request Equipment on WhatsApp
+          </a>
+        </div>
       </section>
 
       {/* EQUIPMENT SECTION */}
-      <div className='grid md:grid-cols-3 gap-8'>
-        <div className='bg-white p-6 rounded-xl shadow text-center'>
-          <img
-            src='/images/scaffold.jpg'
-            alt='Scaffold Rentals'
-            className='rounded-lg mb-4 w-full h-48 object-cover'
-          />
-          <h3 className='font-semibold'>Scaffolds</h3>
-          <p className='text-sm mt-2'>
-            Reliable scaffolding for construction and repairs.
-          </p>
-        </div>
+      {/* EQUIPMENT SECTION */}
+      <section id='equipment' className='max-w-6xl mx-auto py-16 px-6'>
+        <h2 className='text-3xl font-bold text-center mb-10'>
+          Equipment Available
+        </h2>
 
-        <div className='bg-white p-6 rounded-xl shadow text-center'>
-          <img
-            src='/images/mixer.jpg'
-            alt='Concrete Mixer'
-            className='rounded-lg mb-4'
-          />
-          <h3 className='font-semibold'>Concrete Mixers</h3>
-          <p className='text-sm mt-2'>
-            Well maintained mixers ready for your projects.
-          </p>
-        </div>
+        <div className='grid md:grid-cols-3 gap-8'>
+          <div className='bg-white p-6 rounded-xl shadow text-center'>
+            <img
+              src='/images/scaffold.jpeg'
+              alt='Scaffold Rentals'
+              className='rounded-lg mb-4'
+            />
+            <h3 className='font-semibold'>Scaffolds</h3>
+            <p className='text-sm mt-2'>
+              Reliable scaffolding for construction and repairs.
+            </p>
+          </div>
 
-        <div className='bg-white p-6 rounded-xl shadow text-center'>
-          <img
-            src='/images/compactor.jpg'
-            alt='Plate Compactor'
-            className='rounded-lg mb-4'
-          />
-          <h3 className='font-semibold'>Plate Compactors</h3>
-          <p className='text-sm mt-2'>
-            Ideal for foundations, driveways and yard preparation.
-          </p>
+          <div className='bg-white p-6 rounded-xl shadow text-center'>
+            <img
+              src='/images/mixer.jpg'
+              alt='Concrete Mixer'
+              className='rounded-lg mb-4'
+            />
+            <h3 className='font-semibold'>Concrete Mixers</h3>
+            <p className='text-sm mt-2'>
+              Well maintained mixers ready for your projects.
+            </p>
+          </div>
+
+          <div className='bg-white p-6 rounded-xl shadow text-center'>
+            <img
+              src='/images/compactor.jpg'
+              alt='Plate Compactor'
+              className='rounded-lg mb-4'
+            />
+            <h3 className='font-semibold'>Plate Compactors</h3>
+            <p className='text-sm mt-2'>
+              Ideal for foundations, driveways and yard preparation.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* WHY CHOOSE US */}
       <section className='bg-white py-16'>
@@ -77,13 +128,19 @@ export default function BarimaRentalsHome() {
           </div>
         </div>
       </section>
-      <section className='bg-gray-100 py-16'>
+      <section id='locations' className='bg-gray-100 py-16'>
         <div className='max-w-5xl mx-auto px-6 text-center'>
           <h2 className='text-3xl font-bold mb-10'>Our Locations</h2>
 
           <div className='grid md:grid-cols-2 gap-8 text-left'>
             <div className='bg-white p-6 rounded-xl shadow'>
               <h3 className='font-semibold text-lg'>Kitty Location</h3>
+              <a
+                href='https://www.google.com/maps/search/?api=1&query=Station+Street+Kitty+Georgetown'
+                className='text-green-600 text-sm mt-3 inline-block'
+              >
+                View on Google Maps
+              </a>
 
               <p className='mt-3'>
                 Lot 6 "D" Station Street Kitty, Georgetown, Guyana
@@ -96,6 +153,12 @@ export default function BarimaRentalsHome() {
 
             <div className='bg-white p-6 rounded-xl shadow'>
               <h3 className='font-semibold text-lg'>Liliendaal Location</h3>
+              <a
+                href='https://www.google.com/maps/search/?api=1&query=Rupert+Craig+Highway+Liliendaal+greater+georgetown'
+                className='text-green-600 text-sm mt-3 inline-block'
+              >
+                View on Google Maps
+              </a>
 
               <p className='mt-3'>
                 Lot A Rupert Craig Highway Liliendaal, East Coast Demerara,
@@ -111,17 +174,27 @@ export default function BarimaRentalsHome() {
       </section>
 
       {/* CONTACT */}
-      <section className='py-20 text-center'>
-        <h2 className='text-3xl font-bold'>Contact</h2>
+      <section id='contact' className='py-20 text-center'>
+        <h2 className='text-3xl font-bold'>Contact Us</h2>
         <p className='mt-4'>Georgetown, Guyana</p>
 
-        <a
-          href='https://wa.me/5926275775'
-          className='inline-block mt-6 bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600'
-        >
-          Contact on WhatsApp
-        </a>
+        <div className='mt-6 flex flex-col items-center gap-4'>
+          <a
+            href='https://wa.me/5926275775'
+            className='bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600'
+          >
+            Contact on WhatsApp
+          </a>
+
+          <a
+            href='mailto:clevelandforde@yahoo.com'
+            className='bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600'
+          >
+            Send Email
+          </a>
+        </div>
       </section>
+
       <footer className='bg-gray-900 text-white py-8 text-center'>
         <p className='font-semibold text-lg'>Barima Rentals</p>
 
