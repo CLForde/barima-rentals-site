@@ -12,10 +12,14 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Barima Rentals | Construction Equipment Rentals',
   description:
     'Barima Rentals provides scaffolds, concrete mixers and plate compactors for contractors, builders and homeowners in Georgetown and East Coast Demerara, Guyana.',
+
+  icons: {
+    icon: '/favicon.png',
+  },
 
   openGraph: {
     title: 'Barima Rentals',
