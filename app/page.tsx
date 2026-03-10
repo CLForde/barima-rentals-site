@@ -2,13 +2,13 @@ export default function BarimaRentalsHome() {
   return (
     <main className='min-h-screen bg-gray-50 text-gray-800'>
       <nav className='bg-gray-900 text-white sticky top-0 z-50 shadow'>
-        <div className='max-w-6xl mx-auto px-6 py-4 flex justify-between items-center'>
+        <div className='max-w-6xl mx-auto px-4 md:px-6 py-4 flex flex-wrap items-center justify-between gap-3'>
           <div>
             <div className='flex items-center gap-3'>
               <img
                 src='/images/barima-logo.jpeg'
                 alt='Barima Rentals Logo'
-                className='h-10 w-auto'
+                className='h-14 w-auto'
               />
 
               <div>
