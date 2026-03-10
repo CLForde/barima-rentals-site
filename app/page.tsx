@@ -1,6 +1,25 @@
 export default function BarimaRentalsHome() {
   return (
     <main className='min-h-screen bg-gray-50 text-gray-800'>
+      {/* TOP CONTACT STRIP */}
+      <div className='bg-gray-800 text-gray-200 text-xs py-2'>
+        <div className='max-w-6xl mx-auto px-4 md:px-6 flex flex-col sm:flex-row justify-between items-center gap-1'>
+          <p>
+            Serving Georgetown, East Coast, East Bank, West Coast & West Bank
+            Demerara
+          </p>
+
+          <p>
+            WhatsApp:{' '}
+            <a
+              href='https://wa.me/5926275775'
+              className='text-green-400 hover:underline'
+            >
+              627-5775
+            </a>
+          </p>
+        </div>
+      </div>
       <nav className='bg-gray-900 text-white sticky top-0 z-50 shadow'>
         <div className='max-w-6xl mx-auto px-4 md:px-6 py-4 flex flex-wrap items-center justify-between gap-3'>
           <div>
