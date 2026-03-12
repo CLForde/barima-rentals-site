@@ -17,10 +17,6 @@ export const metadata: Metadata = {
   description:
     'Barima Rentals provides scaffolds, concrete mixers and plate compactors for contractors, builders and homeowners in Georgetown and East Coast Demerara, Guyana.',
 
-  icons: {
-    icon: '/favicon.png',
-  },
-
   openGraph: {
     title: 'Barima Rentals',
     description:
@@ -29,7 +25,7 @@ export const metadata: Metadata = {
     siteName: 'Barima Rentals',
     images: [
       {
-        url: '/images/hero.jpeg',
+        url: 'https://barima-rentals-site.vercel.app/images/hero.jpeg',
         width: 1200,
         height: 630,
         alt: 'Barima Rentals Equipment',

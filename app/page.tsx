@@ -155,10 +155,10 @@ export default function BarimaRentalsHome() {
             <div className='bg-white p-6 rounded-xl shadow'>
               <h3 className='font-semibold text-lg'>Kitty Location</h3>
               <a
-                href='https://www.google.com/maps/search/?api=1&query=Station+Street+Kitty+Georgetown'
+                href='https://maps.app.goo.gl/q9DfoZSDfBAbQWnV6'
                 className='text-green-600 text-sm mt-3 inline-block'
               >
-                View on Google Maps
+                Get Directions on Google Maps
               </a>
 
               <p className='mt-3'>
@@ -173,10 +173,10 @@ export default function BarimaRentalsHome() {
             <div className='bg-white p-6 rounded-xl shadow'>
               <h3 className='font-semibold text-lg'>Liliendaal Location</h3>
               <a
-                href='https://www.google.com/maps/search/?api=1&query=Rupert+Craig+Highway+Liliendaal+greater+georgetown'
+                href='https://maps.app.goo.gl/4hjQoFZJiu8mbnno6'
                 className='text-green-600 text-sm mt-3 inline-block'
               >
-                View on Google Maps
+                Get Directions on Google Maps
               </a>
 
               <p className='mt-3'>
