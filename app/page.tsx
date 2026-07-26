@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import HeroCarousel from './HeroCarousel';
+import HeroShowcase from './HeroShowcase';
 
 const trustItems = [
   {
@@ -190,56 +190,7 @@ export default function BarimaRentalsHome() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className='overflow-hidden bg-white'>
-        <div className='mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1fr_0.92fr] lg:gap-14 lg:py-20'>
-          <div className='max-w-2xl text-center lg:text-left'>
-            <p className='mx-auto inline-flex rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-orange-700 lg:mx-0'>
-              Barima Rentals
-            </p>
-
-            <h1 className='mt-5 text-3xl font-bold leading-tight text-gray-950 sm:text-4xl md:text-5xl'>
-              Scaffolding & Concrete Mixer Rentals in Georgetown and Surrounding
-              Areas
-            </h1>
-
-            <p className='mx-auto mt-5 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg lg:mx-0'>
-              Reliable equipment for residential and commercial projects, with
-              Canter transport available for equipment, construction materials
-              and general cargo.
-            </p>
-
-            <div className='mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start'>
-              <a
-                href={whatsappUrl}
-                className='inline-flex min-h-12 items-center justify-center rounded-xl bg-green-600 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-green-700/15 transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200'
-              >
-                Check Availability
-              </a>
-
-              <a
-                href='#equipment'
-                className='inline-flex min-h-12 items-center justify-center rounded-xl border border-gray-300 bg-white px-7 py-3 text-base font-semibold text-gray-900 transition hover:border-orange-300 hover:text-orange-700 focus:outline-none focus:ring-4 focus:ring-orange-100'
-              >
-                View Equipment
-              </a>
-            </div>
-
-            <div className='mt-8 grid gap-3 text-sm text-gray-600 sm:grid-cols-3'>
-              <div className='rounded-xl border border-gray-200 bg-gray-50 px-4 py-3'>
-                Georgetown
-              </div>
-              <div className='rounded-xl border border-gray-200 bg-gray-50 px-4 py-3'>
-                East Coast Demerara
-              </div>
-              <div className='rounded-xl border border-gray-200 bg-gray-50 px-4 py-3'>
-                East Bank Demerara
-              </div>
-            </div>
-          </div>
-
-          <HeroCarousel />
-        </div>
-      </section>
+      <HeroShowcase whatsappUrl={whatsappUrl} />
       <section className='border-y border-gray-200 bg-gray-50 py-16 sm:py-20'>
         <div className='mx-auto max-w-4xl px-5 text-center sm:px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl'>
@@ -276,8 +227,7 @@ export default function BarimaRentalsHome() {
             Scaffolding, Concrete Mixers & Job-Site Equipment
           </h2>
           <p className='mt-4 text-base leading-relaxed text-gray-600'>
-            Reliable rental equipment for residential and commercial projects,
-            with scaffolding and concrete mixers as the core offering.
+            Reliable rental equipment for residential and commercial projects.
           </p>
         </div>
 

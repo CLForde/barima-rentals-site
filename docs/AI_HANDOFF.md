@@ -3,7 +3,7 @@
 ## Project Structure
 
 - `app/page.tsx` - homepage content and sections
-- `app/HeroCarousel.tsx` - focused client carousel for the homepage hero
+- `app/HeroShowcase.tsx` - static two-image hero composition
 - `app/globals.css` - global Tailwind import and shared global CSS
 - `app/layout.tsx` - metadata, schema, root layout
 - `public/images/` - site image assets
@@ -11,7 +11,7 @@
 
 ## Active Phase
 
-Phase 3 complete: cohesive visual polish.
+Hero continuous full-image composition correction complete on `modern-redesign`.
 
 The polished version was preserved on `main` in commit `b706f77` and pushed to `origin/main`. The annotated tag `current-polished-version` was created with message `Preserved polished version before backlog redesign` and pushed to the remote. The `modern-redesign` branch was created from that preserved version, pushed to `origin/modern-redesign`, and is the branch for all future backlog redesign work.
 
@@ -34,10 +34,10 @@ The polished version was preserved on `main` in commit `b706f77` and pushed to `
 - `docs/PROJECT_CONTEXT.md`
 - `docs/AI_HANDOFF.md`
 - `git status --short`
-- `git diff -- app/page.tsx app/globals.css package.json docs/AI_HANDOFF.md CLAUDE.md docs/PROJECT_CONTEXT.md app/HeroCarousel.tsx`
+- `git diff -- app/page.tsx app/globals.css package.json docs/AI_HANDOFF.md CLAUDE.md docs/PROJECT_CONTEXT.md app/HeroShowcase.tsx`
 - `git diff -- app/page.tsx docs/AI_HANDOFF.md`
 - `git status --short`
-- `git diff -- app/page.tsx docs/AI_HANDOFF.md docs/PROJECT_CONTEXT.md CLAUDE.md app/HeroCarousel.tsx`
+- `git diff -- app/page.tsx docs/AI_HANDOFF.md docs/PROJECT_CONTEXT.md CLAUDE.md app/HeroShowcase.tsx`
 
 ## Files Changed
 
@@ -45,7 +45,8 @@ The polished version was preserved on `main` in commit `b706f77` and pushed to `
 - `docs/PROJECT_CONTEXT.md`
 - `docs/AI_HANDOFF.md`
 - `app/page.tsx`
-- `app/HeroCarousel.tsx`
+- `app/HeroShowcase.tsx`
+- Deleted `app/HeroCarousel.tsx`
 
 ## Decisions Applied
 
@@ -80,6 +81,23 @@ The polished version was preserved on `main` in commit `b706f77` and pushed to `
 - Created and pushed the `modern-redesign` branch.
 - Future backlog redesign work must occur on `modern-redesign`.
 - The preserved original `main` branch must remain unchanged unless explicitly approved.
+- Replaced the hero carousel with two vertically stacked full-image panels.
+- The same vertical hero structure is used on desktop, laptop, tablet, and mobile.
+- The scaffolding panel appears first and the 400L mixer panel appears second.
+- Hero images now preserve almost the full original source images.
+- Aggressive cropping and zoom were removed from the hero foreground images.
+- The scaffolding and mixer images connect directly with no white gap.
+- Both images are wrapped in one continuous hero container with one shared border radius and overflow clipping.
+- Hero text bridges the central transition area between the scaffolding and mixer imagery.
+- No visible text panel, blur, white box, grey box, or dark block is used.
+- Used `object-fit: contain` for the sharp foreground images and subtle same-image background filler layers behind them to avoid white bars.
+- Scaffolding foreground uses `object-position: center 20%`; mixer foreground uses `object-position: center center`.
+- Used restrained text shadow and a soft seamless gradient for readability.
+- Removed customer-facing wording that described scaffolding and concrete mixers as the site's "core offering."
+- Removed carousel timers, state, previous/next arrows, slide indicators, and rotation behavior.
+- Animation is intentionally deferred.
+- Equipment-card image sizing remains a separate pending backlog item.
+- `AGENTS.md` remains deferred.
 
 ## Validation Commands And Results
 
@@ -99,11 +117,13 @@ The polished version was preserved on `main` in commit `b706f77` and pushed to `
 
 ## Backlog / Later Refinements
 
-- Hero correction: show the lighthouse and 400L mixer side by side on desktop/laptop, position hero wording cleanly within the two-image composition, remove or simplify the current slow carousel behavior, and decide the mobile arrangement separately.
 - Add subtle "Powered by Barima Venture" branding in the footer.
 - Reassess whether the floating call button should remain dark navy or use a restrained Barima orange after the full page is visually reviewed.
 - Develop the future transport presentation using all three Canters with clearly defined uses.
 - Align the separate `#pricing` section with approved mixer pricing during an explicitly approved pricing task.
+- Reassess equipment-card image sizing in a later approved equipment-card refinement.
+- Decide whether to add rental-hours wording.
+- Add `AGENTS.md` setup as a later documentation task.
 - Consider broad footer, global spacing, typography, and animation refinements only if explicitly approved after visual review.
 
 ## Exact Next Recommended Task
