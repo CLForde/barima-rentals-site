@@ -78,6 +78,11 @@ Main deployment preparation: responsive sticky contact header update.
 - Phone/narrow screens use one compact sticky WhatsApp control at the top with the existing green treatment and WhatsApp link.
 - Removed the previous mobile bottom fixed WhatsApp bar to avoid duplicate active mobile WhatsApp controls.
 - Floating `Call 627-5775` control remains unchanged.
+- 3ft Scaffolding card now uses `/images/3ft-scaffolding.jpeg`; the lighthouse hero image remains only in the hero.
+- Equipment-card images now use the full available card width while preserving the full original photographs with contained, natural-ratio rendering.
+- Standalone Pricing section and Pricing navigation link were removed; card prices remain unchanged.
+- Added subtle footer wording: "Powered by Barima Venture".
+- `modern-redesign` remains separate and untouched by this main-branch production correction.
 
 ## Validation Commands And Results
 

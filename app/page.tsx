@@ -44,7 +44,7 @@ const equipmentItems = [
   {
     category: 'Scaffolding Rental',
     name: '3ft Scaffolding',
-    image: '/images/3ft-scaffolding-hero.PNG',
+    image: '/images/3ft-scaffolding.jpeg',
     alt: '3ft scaffolding rental equipment from Barima Rentals',
     description:
       'Standard 3ft x 6ft scaffolding rental for residential, commercial and construction projects that need stable elevated access.',
@@ -119,7 +119,7 @@ export default function BarimaRentalsHome() {
     )}`;
 
   return (
-    <main className='min-h-screen overflow-x-hidden bg-gray-50 pb-20 text-gray-800 sm:pb-0'>
+    <main className='min-h-screen overflow-x-clip bg-gray-50 pb-20 text-gray-800 sm:pb-0'>
       <a
         href={whatsappUrl}
         className='sticky top-0 z-50 block bg-green-500 px-5 py-3 text-center font-semibold text-white shadow-lg hover:bg-green-600 md:hidden'
@@ -143,7 +143,7 @@ export default function BarimaRentalsHome() {
           </p>
         </div>
       </div>
-      <nav className='bg-gray-900 text-white shadow md:sticky md:top-0 md:z-50'>
+      <nav className='bg-gray-900 text-white shadow md:sticky md:top-0 md:z-[100]'>
         <div className='max-w-6xl mx-auto px-4 md:px-6 py-3 sm:py-4 flex flex-wrap items-center justify-between gap-3'>
           <div className='min-w-0 flex-1 sm:flex-none'>
             <div className='flex items-center gap-3'>
@@ -172,9 +172,6 @@ export default function BarimaRentalsHome() {
           <div className='order-3 sm:order-none w-full sm:w-auto text-sm font-medium flex items-center justify-between sm:justify-start gap-2 sm:gap-4'>
             <a href='#equipment' className='py-2 hover:text-green-400'>
               Equipment
-            </a>
-            <a href='#pricing' className='py-2 hover:text-green-400'>
-              Pricing
             </a>
             <a href='#transportation' className='py-2 hover:text-green-400'>
               Transport
@@ -298,12 +295,13 @@ export default function BarimaRentalsHome() {
                   : 'border-gray-200'
               }`}
             >
-              <div className='relative aspect-[4/3] border-b border-gray-100 bg-gray-50'>
+              <div className='border-b border-gray-100 bg-gray-50'>
                 <Image
                   src={item.image}
                   alt={item.alt}
-                  fill
-                  className='object-contain p-5'
+                  width={1200}
+                  height={1600}
+                  className='block h-auto w-full object-contain'
                   sizes='(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'
                 />
               </div>
@@ -341,52 +339,6 @@ export default function BarimaRentalsHome() {
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      {/* PRICING SECTION */}
-      <section
-        id='pricing'
-        className='mx-5 max-w-4xl scroll-mt-36 rounded-2xl border border-gray-200 bg-white p-6 text-left shadow-sm sm:mx-auto sm:scroll-mt-28 sm:p-8'
-      >
-        <h2 className='mb-7 text-center text-3xl font-bold tracking-tight text-gray-950'>
-          Rental Pricing
-        </h2>
-
-        <div className='grid gap-5 text-sm leading-relaxed text-gray-700 sm:grid-cols-2'>
-          <div className='rounded-xl bg-gray-50 p-4 ring-1 ring-gray-200'>
-            <h3 className='font-semibold text-gray-950'>Scaffolding</h3>
-            <p>
-              3ft x 6ft (standard): $500–$700 per pair/day (based on duration)
-            </p>
-            <p>2ft x 6ft (tight spaces): $700 per pair/day</p>
-            <p className='text-gray-600'>
-              Cement work is $700 per pair regardless of duration.
-            </p>
-          </div>
-
-          <div className='rounded-xl bg-gray-50 p-4 ring-1 ring-gray-200'>
-            <h3 className='font-semibold text-gray-950'>Concrete Mixers</h3>
-            <p>400L mixer: $25,000/day</p>
-            <p>500L mixer: $35,000/day </p>
-            <p className='text-gray-600'>
-              Also known as cement mixer, mixer or “ransom”.
-            </p>
-          </div>
-
-          <div className='rounded-xl bg-gray-50 p-4 ring-1 ring-gray-200'>
-            <h3 className='font-semibold text-gray-950'>Plate Compactor</h3>
-            <p>90kg compactor available: $15,000/day</p>
-          </div>
-
-          <div className='rounded-xl bg-gray-50 p-4 ring-1 ring-gray-200'>
-            <h3 className='font-semibold text-gray-950'>Delivery & Pickup</h3>
-            <p>Available across Georgetown and surrounding areas</p>
-            <p>Starting from $12,000 (delivery & pickup)</p>
-            <p className='text-gray-600'>
-              Best suited for medium to large jobs or longer rental periods.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -590,6 +542,10 @@ export default function BarimaRentalsHome() {
 
           <p className='mt-4 text-sm'>
             © {new Date().getFullYear()} Barima Rentals
+          </p>
+
+          <p className='mt-3 text-xs text-gray-500'>
+            Powered by <span className='font-medium'>Barima Venture</span>
           </p>
         </div>
       </footer>
