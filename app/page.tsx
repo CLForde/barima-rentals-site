@@ -120,6 +120,13 @@ export default function BarimaRentalsHome() {
 
   return (
     <main className='min-h-screen overflow-x-hidden bg-gray-50 pb-20 text-gray-800 sm:pb-0'>
+      <a
+        href={whatsappUrl}
+        className='sticky top-0 z-50 block bg-green-500 px-5 py-3 text-center font-semibold text-white shadow-lg hover:bg-green-600 md:hidden'
+      >
+        WhatsApp Barima Rentals
+      </a>
+
       {/* TOP CONTACT STRIP */}
       <div className='bg-gray-800 text-gray-200 text-xs py-2'>
         <div className='max-w-6xl mx-auto px-4 md:px-6 flex flex-col sm:flex-row justify-between items-center gap-1 text-center sm:text-left'>
@@ -136,7 +143,7 @@ export default function BarimaRentalsHome() {
           </p>
         </div>
       </div>
-      <nav className='bg-gray-900 text-white sticky top-0 z-50 shadow'>
+      <nav className='bg-gray-900 text-white shadow md:sticky md:top-0 md:z-50'>
         <div className='max-w-6xl mx-auto px-4 md:px-6 py-3 sm:py-4 flex flex-wrap items-center justify-between gap-3'>
           <div className='min-w-0 flex-1 sm:flex-none'>
             <div className='flex items-center gap-3'>
@@ -182,7 +189,7 @@ export default function BarimaRentalsHome() {
 
           <a
             href={whatsappUrl}
-            className='bg-green-500 px-4 py-2 rounded-lg font-semibold hover:bg-green-600 shrink-0'
+            className='hidden bg-green-500 px-4 py-2 rounded-lg font-semibold hover:bg-green-600 shrink-0 md:inline-block'
           >
             WhatsApp
           </a>
@@ -586,13 +593,6 @@ export default function BarimaRentalsHome() {
           </p>
         </div>
       </footer>
-
-      <a
-        href={whatsappUrl}
-        className='fixed bottom-4 left-4 right-20 z-50 bg-green-500 text-white text-center px-5 py-3 rounded-lg font-semibold shadow-lg hover:bg-green-600 sm:hidden'
-      >
-        WhatsApp Barima Rentals
-      </a>
 
       <a
         href={`tel:${phoneNumber}`}

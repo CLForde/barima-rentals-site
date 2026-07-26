@@ -11,7 +11,7 @@
 
 ## Active Phase
 
-Phase 3 complete: cohesive visual polish.
+Main deployment preparation: responsive sticky contact header update.
 
 ## Phase Checklist
 
@@ -71,6 +71,13 @@ Phase 3 complete: cohesive visual polish.
 - Polished the How to Book, equipment, pricing, transport, why-choose-us, locations, contact, and footer presentation without changing their business facts, approved prices, addresses, or contact destinations.
 - Preserved the existing Phase 1 hero structure and carousel behavior during Phase 3.
 - Did not implement any backlog items during Phase 3.
+- Preserved modern-redesign separately in commit `34eb5d8` on `modern-redesign` and pushed it to `origin/modern-redesign`; do not merge redesign work into `main` unless explicitly approved.
+- Prepared the main-branch version for deployment with a responsive sticky contact-header behavior.
+- Desktop/laptop uses the full dark navy header as sticky, including logo/business identity, navigation links, and WhatsApp button.
+- Phone/narrow screens let the full mobile header scroll normally with the page.
+- Phone/narrow screens use one compact sticky WhatsApp control at the top with the existing green treatment and WhatsApp link.
+- Removed the previous mobile bottom fixed WhatsApp bar to avoid duplicate active mobile WhatsApp controls.
+- Floating `Call 627-5775` control remains unchanged.
 
 ## Validation Commands And Results
 
