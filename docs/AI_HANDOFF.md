@@ -13,6 +13,8 @@
 
 Phase 3 complete: cohesive visual polish.
 
+The polished version was preserved on `main` in commit `b706f77` and pushed to `origin/main`. The annotated tag `current-polished-version` was created with message `Preserved polished version before backlog redesign` and pushed to the remote. The `modern-redesign` branch was created from that preserved version, pushed to `origin/modern-redesign`, and is the branch for all future backlog redesign work.
+
 ## Phase Checklist
 
 - [x] Documentation setup
@@ -34,6 +36,8 @@ Phase 3 complete: cohesive visual polish.
 - `git status --short`
 - `git diff -- app/page.tsx app/globals.css package.json docs/AI_HANDOFF.md CLAUDE.md docs/PROJECT_CONTEXT.md app/HeroCarousel.tsx`
 - `git diff -- app/page.tsx docs/AI_HANDOFF.md`
+- `git status --short`
+- `git diff -- app/page.tsx docs/AI_HANDOFF.md docs/PROJECT_CONTEXT.md CLAUDE.md app/HeroCarousel.tsx`
 
 ## Files Changed
 
@@ -71,6 +75,11 @@ Phase 3 complete: cohesive visual polish.
 - Polished the How to Book, equipment, pricing, transport, why-choose-us, locations, contact, and footer presentation without changing their business facts, approved prices, addresses, or contact destinations.
 - Preserved the existing Phase 1 hero structure and carousel behavior during Phase 3.
 - Did not implement any backlog items during Phase 3.
+- Committed and pushed the current polished website version on `main`.
+- Created and pushed the annotated `current-polished-version` tag.
+- Created and pushed the `modern-redesign` branch.
+- Future backlog redesign work must occur on `modern-redesign`.
+- The preserved original `main` branch must remain unchanged unless explicitly approved.
 
 ## Validation Commands And Results
 
