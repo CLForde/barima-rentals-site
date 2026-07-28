@@ -14,7 +14,7 @@
 
 ## Active Phase
 
-Main local technical SEO and webmaster-readiness preparation.
+Main local homepage CTA, equipment wording, and section-order refinement.
 
 ## Phase Checklist
 
@@ -139,6 +139,16 @@ Main local technical SEO and webmaster-readiness preparation.
 - Header tagline now matches the approved wording: "Equipment Rental & Logistics Solutions".
 - Transportation copy remains broad and includes construction materials, equipment, goods, barrels, household items, signs, deliveries and job-site coordination.
 - `.gitignore` now allows `.env.example` while continuing to ignore real `.env*` files.
+- Hero primary CTA is now "Book Your Rental".
+- Hero "View Equipment" CTA remains linked to `#equipment` and is transparent with no blur or frosted effect.
+- All equipment-card CTAs now say "Book Now".
+- One Equipment section notice says "Advance booking is recommended for timely service."
+- Shared mixer alternate wording now appears once at the Concrete Mixers group level.
+- Repeated mixer-card notes were removed.
+- Plate compactor alternate wording remains on its card.
+- Equipment now appears directly after the hero.
+- How to Book was moved below Transportation Solutions and made more compact.
+- No commit, push, or deployment has occurred for this refinement.
 
 ## Validation Commands And Results
 

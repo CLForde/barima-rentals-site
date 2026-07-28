@@ -66,12 +66,12 @@ export default function HeroSection({ whatsappUrl }: HeroSectionProps) {
                   href={whatsappUrl}
                   className='inline-flex min-h-11 items-center justify-center rounded-xl bg-green-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-gray-900/20 transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200 sm:min-h-12 sm:px-6 sm:py-3 sm:text-base'
                 >
-                  Check Availability
+                  Book Your Rental
                 </a>
 
                 <a
                   href='#equipment'
-                  className='inline-flex min-h-11 items-center justify-center rounded-xl border border-white/70 bg-black/15 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-[2px] transition hover:bg-black/25 focus:outline-none focus:ring-4 focus:ring-white/30 sm:min-h-12 sm:px-6 sm:py-3 sm:text-base'
+                  className='inline-flex min-h-11 items-center justify-center rounded-xl border border-white/80 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-white/30 sm:min-h-12 sm:px-6 sm:py-3 sm:text-base'
                 >
                   View Equipment
                 </a>

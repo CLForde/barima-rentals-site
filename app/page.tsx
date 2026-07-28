@@ -78,7 +78,7 @@ const equipmentItems = [
     description:
       'Concrete mixer rental for larger pours and active construction projects that need a higher-capacity mixer option.',
     price: 'G$33,000/day',
-    note: 'Also commonly requested as a cement mixer or ransom.',
+    note: '',
     featured: true,
   },
   {
@@ -92,7 +92,7 @@ const equipmentItems = [
     description:
       'Concrete mixer rental for residential and commercial projects needing reliable daily mixing capacity.',
     price: 'G$28,000/day',
-    note: 'Also commonly requested as a cement mixer or ransom.',
+    note: '',
     featured: true,
   },
   {
@@ -106,7 +106,7 @@ const equipmentItems = [
     description:
       'Concrete mixer rental for smaller job-site pours, residential work and general cement mixing needs.',
     price: 'G$23,000/day',
-    note: 'Also commonly requested as a cement mixer or ransom.',
+    note: '',
     featured: true,
   },
   {
@@ -261,36 +261,10 @@ export default function BarimaRentalsHome() {
 
       <HeroSection whatsappUrl={whatsappUrl} />
 
-      <section className='border-y border-gray-200 bg-gray-50 py-16 sm:py-20'>
-        <div className='mx-auto max-w-4xl px-5 text-center sm:px-6'>
-          <h2 className='text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl'>
-            How to Book
-          </h2>
-
-          <div className='mt-8 grid gap-3 text-sm leading-relaxed text-gray-700 sm:grid-cols-2 lg:grid-cols-4'>
-            <p className='rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm'>
-              1. Message us on WhatsApp
-            </p>
-
-            <p className='rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm'>
-              2. Send equipment needed, location, date and duration
-            </p>
-
-            <p className='rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm'>
-              3. We confirm availability and total cost
-            </p>
-
-            <p className='rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm'>
-              4. Schedule delivery or pickup
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* EQUIPMENT SECTION */}
       <section
         id='equipment'
-        className='mx-auto max-w-6xl scroll-mt-36 px-5 py-16 sm:scroll-mt-28 sm:px-6 lg:py-24'
+        className='mx-auto max-w-6xl scroll-mt-36 px-5 py-14 sm:scroll-mt-28 sm:px-6 lg:py-20'
       >
         <div className='mx-auto max-w-3xl text-center'>
           <p className='text-sm font-bold uppercase tracking-[0.14em] text-orange-700'>
@@ -303,6 +277,10 @@ export default function BarimaRentalsHome() {
 
           <p className='mt-4 text-base leading-relaxed text-gray-600'>
             Reliable rental equipment for residential and commercial projects.
+          </p>
+
+          <p className='mx-auto mt-5 max-w-xl rounded-xl border border-orange-200 bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-800'>
+            Advance booking is recommended for timely service.
           </p>
         </div>
 
@@ -317,6 +295,12 @@ export default function BarimaRentalsHome() {
                 <h3 className='text-lg font-bold tracking-tight text-gray-950 sm:text-xl'>
                   {group}
                 </h3>
+
+                {group === 'Concrete Mixers' ? (
+                  <p className='mt-2 text-sm leading-relaxed text-gray-600'>
+                    Also commonly requested as a cement mixer or ransom.
+                  </p>
+                ) : null}
 
                 <div
                   className={`mt-4 grid gap-5 sm:grid-cols-2 lg:gap-7 ${
@@ -373,7 +357,7 @@ export default function BarimaRentalsHome() {
                             href={createEquipmentWhatsappUrl(item.name)}
                             className='inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-green-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200'
                           >
-                            Check Availability
+                            Book Now
                           </a>
                         </div>
                       </div>
@@ -446,6 +430,32 @@ export default function BarimaRentalsHome() {
             >
               Arrange Transport on WhatsApp
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className='border-y border-gray-200 bg-gray-50 py-10 sm:py-12 lg:py-14'>
+        <div className='mx-auto max-w-4xl px-5 text-center sm:px-6'>
+          <h2 className='text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl'>
+            How to Book
+          </h2>
+
+          <div className='mt-5 grid gap-2 text-sm leading-relaxed text-gray-700 sm:grid-cols-2 lg:grid-cols-4'>
+            <p className='rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm'>
+              1. Message us on WhatsApp
+            </p>
+
+            <p className='rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm'>
+              2. Send the equipment, location, date and duration
+            </p>
+
+            <p className='rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm'>
+              3. We confirm the booking and total cost
+            </p>
+
+            <p className='rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm'>
+              4. Delivery or pickup is scheduled
+            </p>
           </div>
         </div>
       </section>
