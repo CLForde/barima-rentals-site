@@ -3,15 +3,18 @@
 ## Project Structure
 
 - `app/page.tsx` - homepage content and sections
-- `app/HeroCarousel.tsx` - focused client carousel for the homepage hero
+- `app/HeroSection.tsx` - static single-image homepage hero
 - `app/globals.css` - global Tailwind import and shared global CSS
 - `app/layout.tsx` - metadata, schema, root layout
+- `app/robots.ts` - App Router robots output
+- `app/sitemap.ts` - App Router sitemap output
 - `public/images/` - site image assets
 - `package.json` - scripts and dependencies
+- `docs/SEO_CHECKLIST.md` - SEO, local-search and webmaster preparation checklist
 
 ## Active Phase
 
-Main deployment preparation: responsive sticky contact header update.
+Main local technical SEO and webmaster-readiness preparation.
 
 ## Phase Checklist
 
@@ -41,7 +44,18 @@ Main deployment preparation: responsive sticky contact header update.
 - `docs/PROJECT_CONTEXT.md`
 - `docs/AI_HANDOFF.md`
 - `app/page.tsx`
-- `app/HeroCarousel.tsx`
+- `app/HeroSection.tsx`
+- `app/HeroCarousel.tsx` - removed obsolete carousel component
+- `app/layout.tsx`
+- `app/robots.ts`
+- `app/sitemap.ts`
+- `next.config.ts`
+- `.gitignore`
+- `app/icon.png`
+- `app/favicon.ico`
+- `public/images/3ft-scaffolding-candidate-cropped.png`
+- `docs/SEO_CHECKLIST.md`
+- `.env.example`
 
 ## Decisions Applied
 
@@ -83,18 +97,61 @@ Main deployment preparation: responsive sticky contact header update.
 - Standalone Pricing section and Pricing navigation link were removed; card prices remain unchanged.
 - Added subtle footer wording: "Powered by Barima Venture".
 - `modern-redesign` remains separate and untouched by this main-branch production correction.
+- Visible "core offering" wording was manually removed and preserved.
+- 3ft Scaffolding card image now uses the full card width with the complete original photograph preserved.
+- Equipment prices now appear with equipment names instead of in bottom price boxes.
+- Equipment is grouped into Scaffolding, Concrete Mixers, and Compaction Equipment.
+- Concrete mixer order is 450L, 400L, then 350L.
+- Header logo now uses the brighter `/images/barima-rentals-logo.png` asset.
+- Favicon assets were regenerated from `/images/barima-favicon.png` so the building fills most of the square icon canvas.
+- Hero now uses the approved `/images/3ft-scaffolding-candidate-cropped.png` image as one scaffolding image only.
+- The 400L mixer was removed from the hero; it remains only in the approved equipment card.
+- Obsolete carousel logic and controls were removed with `app/HeroCarousel.tsx`.
+- Current lighthouse image `/images/3ft-scaffolding-hero.PNG` was reassigned to the 3ft Scaffolding card.
+- 2ft Scaffolding card image remains `/images/2ft-scaffolding.jpeg`.
+- Equipment prices now appear directly beneath equipment names on all breakpoints.
+- Existing alternate-name/supporting wording was preserved.
+- Equipment grouping remains Scaffolding, Concrete Mixers, and Compaction Equipment.
+- Mixer order remains 450L, 400L, then 350L.
+- Brighter header logo and corrected favicon were preserved.
+- `modern-redesign` remains separate and untouched.
+- No commit or push has been performed for this local update.
+- Phone widths below 768px use one fixed top WhatsApp control.
+- The full phone header scrolls normally.
+- Tablet widths from approximately 768px use the full sticky dark-blue header.
+- Laptops and desktops use the full sticky dark-blue header.
+- A phone-only top content offset prevents the fixed WhatsApp control from covering the hero/top content.
+- No duplicate WhatsApp controls remain.
+- Hero now uses a full-width natural-aspect-ratio image without large white side margins.
+- Hero text sits directly over the image, and the image/text scroll together as one normal section.
+- Hero image is no longer stretched by a forced height or constrained by a centered card wrapper.
+- Phone WhatsApp control now touches the top edge with safe-area padding inside the green bar.
+- Phone content starts immediately beneath the fixed WhatsApp control using the smallest matching offset.
+- No commit, push, or deployment has occurred for this correction.
+- Technical SEO preparation added root metadataBase, homepage canonical, title template, Open Graph, Twitter/X metadata, robots directives and conditional Google/Bing verification metadata.
+- Google Search Console and Bing Webmaster verification values are read from `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` and `NEXT_PUBLIC_BING_SITE_VERIFICATION`; empty values do not render verification tags.
+- LocalBusiness JSON-LD now uses one stable `https://barimarentals.com/#business` entity with `Barima Rentals` and `CF Rentals`, Kitty as the primary address, approved service areas and approved services.
+- No fake reviews, aggregate ratings, opening hours, coordinates, invented social URLs or unapproved business claims were added.
+- Added `app/robots.ts` with crawl allow rules and production sitemap reference.
+- Added `app/sitemap.ts` listing only the real production homepage URL.
+- Added `docs/SEO_CHECKLIST.md` for webmaster setup, Google Business Profile readiness, profile URL gaps, review-readiness, backlink tracking and future service-page planning.
+- Header brand text was changed from an `h1` to paragraph text so the hero remains the single page H1.
+- Header tagline now matches the approved wording: "Equipment Rental & Logistics Solutions".
+- Transportation copy remains broad and includes construction materials, equipment, goods, barrels, household items, signs, deliveries and job-site coordination.
+- `.gitignore` now allows `.env.example` while continuing to ignore real `.env*` files.
 
 ## Validation Commands And Results
 
 - Passed: `npm run lint`
 - Passed: `npm run build`
+- Build output confirmed static `/robots.txt` and `/sitemap.xml` routes.
+- Browser automation could not complete because the available Node browser tool failed before execution with missing sandbox metadata; manual browser visual review is still required.
 
 ## Known Issues
 
 - Visual review in a browser is still recommended for final desktop and mobile polish.
 - Existing untracked image assets remain in `public/images/`; they were not deleted or modified.
-- The separate `#pricing` section still contains older concrete mixer prices because Phase 2 was limited to equipment cards and unrelated sections were not modified.
-- Visual review should confirm desktop/laptop spacing, mobile card rhythm, and fixed mobile contact controls after the full-page polish.
+- Visual review should confirm desktop/laptop spacing, mobile card rhythm, the full-width hero overlay, and fixed mobile contact controls before checkpoint creation.
 
 ## Deferred Work
 
@@ -102,13 +159,10 @@ Main deployment preparation: responsive sticky contact header update.
 
 ## Backlog / Later Refinements
 
-- Hero correction: show the lighthouse and 400L mixer side by side on desktop/laptop, position hero wording cleanly within the two-image composition, remove or simplify the current slow carousel behavior, and decide the mobile arrangement separately.
-- Add subtle "Powered by Barima Venture" branding in the footer.
 - Reassess whether the floating call button should remain dark navy or use a restrained Barima orange after the full page is visually reviewed.
 - Develop the future transport presentation using all three Canters with clearly defined uses.
-- Align the separate `#pricing` section with approved mixer pricing during an explicitly approved pricing task.
 - Consider broad footer, global spacing, typography, and animation refinements only if explicitly approved after visual review.
 
 ## Exact Next Recommended Task
 
-Manual visual review of the homepage on desktop/laptop/tablet/mobile, then explicitly approve the next targeted refinement from the backlog.
+Local visual evaluation of the approved single-image hero and equipment cards before checkpoint creation.

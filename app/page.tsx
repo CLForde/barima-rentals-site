@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import HeroCarousel from './HeroCarousel';
+import HeroSection from './HeroSection';
 
 const trustItems = [
   {
@@ -22,9 +22,7 @@ const trustItems = [
   },
   {
     title: 'Residential & Commercial Projects',
-    icon: (
-      <path d='M4 21V8l8-5 8 5v13M9 21v-7h6v7M8 10h.01M16 10h.01' />
-    ),
+    icon: <path d='M4 21V8l8-5 8 5v13M9 21v-7h6v7M8 10h.01M16 10h.01' />,
   },
   {
     title: 'Serving Georgetown & Surrounding Areas',
@@ -42,9 +40,12 @@ const trustItems = [
 
 const equipmentItems = [
   {
+    group: 'Scaffolding',
     category: 'Scaffolding Rental',
     name: '3ft Scaffolding',
-    image: '/images/3ft-scaffolding.jpeg',
+    image: '/images/3ft-scaffolding-hero.PNG',
+    width: 891,
+    height: 1373,
     alt: '3ft scaffolding rental equipment from Barima Rentals',
     description:
       'Standard 3ft x 6ft scaffolding rental for residential, commercial and construction projects that need stable elevated access.',
@@ -53,9 +54,12 @@ const equipmentItems = [
     featured: true,
   },
   {
+    group: 'Scaffolding',
     category: 'Scaffolding Rental',
     name: '2ft Scaffolding',
     image: '/images/2ft-scaffolding.jpeg',
+    width: 1023,
+    height: 1537,
     alt: '2ft scaffolding rental equipment for tight access areas',
     description:
       'Narrow 2ft scaffolding for side passages, tight access areas and confined spaces where standard scaffold will not fit.',
@@ -64,31 +68,12 @@ const equipmentItems = [
     featured: true,
   },
   {
-    category: 'Concrete Mixer',
-    name: '350L Concrete Mixer',
-    image: '/images/350l-concrete-mixer.PNG',
-    alt: '350L concrete mixer rental from Barima Rentals',
-    description:
-      'Concrete mixer rental for smaller job-site pours, residential work and general cement mixing needs.',
-    price: 'G$23,000/day',
-    note: 'Also commonly requested as a cement mixer or ransom.',
-    featured: true,
-  },
-  {
-    category: 'Concrete Mixer',
-    name: '400L Concrete Mixer',
-    image: '/images/400l-concrete-mixer.PNG',
-    alt: '400L concrete mixer rental from Barima Rentals',
-    description:
-      'Concrete mixer rental for residential and commercial projects needing reliable daily mixing capacity.',
-    price: 'G$28,000/day',
-    note: 'Also commonly requested as a cement mixer or ransom.',
-    featured: true,
-  },
-  {
+    group: 'Concrete Mixers',
     category: 'Concrete Mixer',
     name: '450L Concrete Mixer',
     image: '/images/450l-concrete-mixer.PNG',
+    width: 1167,
+    height: 1005,
     alt: '450L concrete mixer rental from Barima Rentals',
     description:
       'Concrete mixer rental for larger pours and active construction projects that need a higher-capacity mixer option.',
@@ -97,9 +82,40 @@ const equipmentItems = [
     featured: true,
   },
   {
+    group: 'Concrete Mixers',
+    category: 'Concrete Mixer',
+    name: '400L Concrete Mixer',
+    image: '/images/400l-concrete-mixer.PNG',
+    width: 952,
+    height: 1079,
+    alt: '400L concrete mixer rental from Barima Rentals',
+    description:
+      'Concrete mixer rental for residential and commercial projects needing reliable daily mixing capacity.',
+    price: 'G$28,000/day',
+    note: 'Also commonly requested as a cement mixer or ransom.',
+    featured: true,
+  },
+  {
+    group: 'Concrete Mixers',
+    category: 'Concrete Mixer',
+    name: '350L Concrete Mixer',
+    image: '/images/350l-concrete-mixer.PNG',
+    width: 963,
+    height: 1211,
+    alt: '350L concrete mixer rental from Barima Rentals',
+    description:
+      'Concrete mixer rental for smaller job-site pours, residential work and general cement mixing needs.',
+    price: 'G$23,000/day',
+    note: 'Also commonly requested as a cement mixer or ransom.',
+    featured: true,
+  },
+  {
+    group: 'Compaction Equipment',
     category: 'Compaction Equipment',
     name: '90kg Plate Compactor',
     image: '/images/90kg-plate-compactor.jpeg',
+    width: 924,
+    height: 1600,
     alt: '90kg plate compactor rental from Barima Rentals',
     description:
       '90kg plate compactor rental for soil compaction, driveways, foundation preparation and construction site groundwork.',
@@ -109,27 +125,34 @@ const equipmentItems = [
   },
 ];
 
+const equipmentGroups = [
+  'Scaffolding',
+  'Concrete Mixers',
+  'Compaction Equipment',
+];
+
 export default function BarimaRentalsHome() {
   const phoneNumber = '+5926275775';
   const whatsappUrl =
     'https://wa.me/5926275775?text=Hello%20Barima%20Rentals%2C%20I%27d%20like%20to%20check%20equipment%20availability.';
+
   const createEquipmentWhatsappUrl = (equipmentName: string) =>
     `https://wa.me/5926275775?text=${encodeURIComponent(
-      `Hello Barima Rentals, I'd like to check availability for ${equipmentName}.`
+      `Hello Barima Rentals, I'd like to check availability for ${equipmentName}.`,
     )}`;
 
   return (
-    <main className='min-h-screen overflow-x-clip bg-gray-50 pb-20 text-gray-800 sm:pb-0'>
+    <main className='min-h-screen overflow-x-clip bg-gray-50 pb-20 pt-[calc(env(safe-area-inset-top,0px)+2.5rem)] text-gray-800 sm:pb-0 md:pt-0'>
       <a
         href={whatsappUrl}
-        className='sticky top-0 z-50 block bg-green-500 px-5 py-3 text-center font-semibold text-white shadow-lg hover:bg-green-600 md:hidden'
+        className='fixed left-0 right-0 top-0 z-[120] block bg-green-500 px-4 pb-2.5 pt-[calc(env(safe-area-inset-top,0px)+0.625rem)] text-center text-sm font-semibold text-white shadow-lg hover:bg-green-600 md:hidden'
       >
         WhatsApp Barima Rentals
       </a>
 
       {/* TOP CONTACT STRIP */}
-      <div className='bg-gray-800 text-gray-200 text-xs py-2'>
-        <div className='max-w-6xl mx-auto px-4 md:px-6 flex flex-col sm:flex-row justify-between items-center gap-1 text-center sm:text-left'>
+      <div className='bg-gray-800 py-2 text-xs text-gray-200'>
+        <div className='mx-auto flex max-w-6xl flex-col items-center justify-between gap-1 px-4 text-center sm:flex-row sm:text-left md:px-6'>
           <p className='leading-relaxed'>
             Serving Georgetown, East Coast Demerara, East Bank Demerara, West
             Coast Demerara and West Bank Demerara, Guyana.
@@ -143,42 +166,50 @@ export default function BarimaRentalsHome() {
           </p>
         </div>
       </div>
+
       <nav className='bg-gray-900 text-white shadow md:sticky md:top-0 md:z-[100]'>
-        <div className='max-w-6xl mx-auto px-4 md:px-6 py-3 sm:py-4 flex flex-wrap items-center justify-between gap-3'>
+        <div className='mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:py-4 md:flex-nowrap md:gap-2 md:px-4 lg:gap-3 lg:px-6'>
           <div className='min-w-0 flex-1 sm:flex-none'>
             <div className='flex items-center gap-3'>
               <Image
-                src='/images/logo.png'
+                src='/images/barima-rentals-logo.png'
                 alt='Barima Rentals Logo'
-                width={1254}
-                height={1254}
-                className='h-12 sm:h-14 w-auto shrink-0'
+                width={1536}
+                height={1024}
+                className='h-12 w-auto shrink-0 sm:h-14 md:h-10 lg:h-14'
                 priority
               />
 
               <div className='min-w-0 leading-tight'>
-                <h1 className='font-bold text-lg'>Barima Rentals</h1>
-                <p className='text-xs sm:text-sm text-gray-200'>
+                <p className='text-lg font-bold md:text-sm lg:text-lg'>
+                  Barima Rentals
+                </p>
+
+                <p className='text-xs text-gray-200 sm:text-sm md:text-xs lg:text-sm'>
                   <span className='text-orange-400'>Formerly CF Rentals</span>
-                  <span className='hidden sm:inline'>
+
+                  <span className='hidden lg:inline'>
                     {' '}
-                    • Equipment Rental & Construction Logistics Solutions
+                    • Equipment Rental & Logistics Solutions
                   </span>
                 </p>
               </div>
             </div>
           </div>
 
-          <div className='order-3 sm:order-none w-full sm:w-auto text-sm font-medium flex items-center justify-between sm:justify-start gap-2 sm:gap-4'>
+          <div className='hidden items-center gap-2 text-sm font-medium md:flex md:text-[11px] lg:gap-4 lg:text-sm'>
             <a href='#equipment' className='py-2 hover:text-green-400'>
               Equipment
             </a>
+
             <a href='#transportation' className='py-2 hover:text-green-400'>
               Transport
             </a>
+
             <a href='#locations' className='py-2 hover:text-green-400'>
               Locations
             </a>
+
             <a href='#contact' className='py-2 hover:text-green-400'>
               Contact
             </a>
@@ -186,64 +217,50 @@ export default function BarimaRentalsHome() {
 
           <a
             href={whatsappUrl}
-            className='hidden bg-green-500 px-4 py-2 rounded-lg font-semibold hover:bg-green-600 shrink-0 md:inline-block'
+            className='hidden shrink-0 rounded-lg bg-green-500 px-4 py-2 font-semibold hover:bg-green-600 md:inline-block md:px-2 md:text-sm lg:px-4'
           >
             WhatsApp
           </a>
         </div>
       </nav>
 
-      {/* HERO SECTION */}
-      <section className='overflow-hidden bg-white'>
-        <div className='mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1fr_0.92fr] lg:gap-14 lg:py-20'>
-          <div className='max-w-2xl text-center lg:text-left'>
-            <p className='mx-auto inline-flex rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-orange-700 lg:mx-0'>
-              Barima Rentals
-            </p>
+      {/* On phones, this row scrolls normally at first, then sticks directly
+          beneath the fixed WhatsApp bar after the branding section scrolls away. */}
+      <nav
+        aria-label='Mobile navigation'
+        className='sticky top-[calc(env(safe-area-inset-top,0px)+2.5rem)] z-[110] grid grid-cols-4 items-center bg-gray-900 px-2 py-3 text-center text-sm font-medium text-white shadow md:hidden'
+      >
+        <a
+          href='#equipment'
+          className='flex min-h-10 items-center justify-center px-1 hover:text-green-400'
+        >
+          Equipment
+        </a>
 
-            <h1 className='mt-5 text-3xl font-bold leading-tight text-gray-950 sm:text-4xl md:text-5xl'>
-              Scaffolding & Concrete Mixer Rentals in Georgetown and Surrounding
-              Areas
-            </h1>
+        <a
+          href='#transportation'
+          className='flex min-h-10 items-center justify-center px-1 hover:text-green-400'
+        >
+          Transport
+        </a>
 
-            <p className='mx-auto mt-5 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg lg:mx-0'>
-              Reliable equipment for residential and commercial projects, with
-              Canter transport available for equipment, construction materials
-              and general cargo.
-            </p>
+        <a
+          href='#locations'
+          className='flex min-h-10 items-center justify-center px-1 hover:text-green-400'
+        >
+          Locations
+        </a>
 
-            <div className='mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start'>
-              <a
-                href={whatsappUrl}
-                className='inline-flex min-h-12 items-center justify-center rounded-xl bg-green-600 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-green-700/15 transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200'
-              >
-                Check Availability
-              </a>
+        <a
+          href='#contact'
+          className='flex min-h-10 items-center justify-center px-1 hover:text-green-400'
+        >
+          Contact
+        </a>
+      </nav>
 
-              <a
-                href='#equipment'
-                className='inline-flex min-h-12 items-center justify-center rounded-xl border border-gray-300 bg-white px-7 py-3 text-base font-semibold text-gray-900 transition hover:border-orange-300 hover:text-orange-700 focus:outline-none focus:ring-4 focus:ring-orange-100'
-              >
-                View Equipment
-              </a>
-            </div>
+      <HeroSection whatsappUrl={whatsappUrl} />
 
-            <div className='mt-8 grid gap-3 text-sm text-gray-600 sm:grid-cols-3'>
-              <div className='rounded-xl border border-gray-200 bg-gray-50 px-4 py-3'>
-                Georgetown
-              </div>
-              <div className='rounded-xl border border-gray-200 bg-gray-50 px-4 py-3'>
-                East Coast Demerara
-              </div>
-              <div className='rounded-xl border border-gray-200 bg-gray-50 px-4 py-3'>
-                East Bank Demerara
-              </div>
-            </div>
-          </div>
-
-          <HeroCarousel />
-        </div>
-      </section>
       <section className='border-y border-gray-200 bg-gray-50 py-16 sm:py-20'>
         <div className='mx-auto max-w-4xl px-5 text-center sm:px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl'>
@@ -254,12 +271,15 @@ export default function BarimaRentalsHome() {
             <p className='rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm'>
               1. Message us on WhatsApp
             </p>
+
             <p className='rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm'>
               2. Send equipment needed, location, date and duration
             </p>
+
             <p className='rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm'>
               3. We confirm availability and total cost
             </p>
+
             <p className='rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm'>
               4. Schedule delivery or pickup
             </p>
@@ -276,69 +296,93 @@ export default function BarimaRentalsHome() {
           <p className='text-sm font-bold uppercase tracking-[0.14em] text-orange-700'>
             Equipment Rentals
           </p>
+
           <h2 className='mt-3 text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl'>
             Scaffolding, Concrete Mixers & Job-Site Equipment
           </h2>
+
           <p className='mt-4 text-base leading-relaxed text-gray-600'>
-            Reliable rental equipment for residential and commercial projects,
-            with scaffolding and concrete mixers as the core offering.
+            Reliable rental equipment for residential and commercial projects.
           </p>
         </div>
 
-        <div className='mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7'>
-          {equipmentItems.map((item) => (
-            <article
-              key={item.name}
-              className={`flex h-full flex-col overflow-hidden rounded-2xl border bg-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none ${
-                item.featured
-                  ? 'border-orange-100 shadow-orange-900/5'
-                  : 'border-gray-200'
-              }`}
-            >
-              <div className='border-b border-gray-100 bg-gray-50'>
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  width={1200}
-                  height={1600}
-                  className='block h-auto w-full object-contain'
-                  sizes='(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'
-                />
-              </div>
+        <div className='mt-10 space-y-10'>
+          {equipmentGroups.map((group) => {
+            const groupItems = equipmentItems.filter(
+              (item) => item.group === group,
+            );
 
-              <div className='flex flex-1 flex-col p-5 sm:p-6'>
-                <p className='text-xs font-bold uppercase tracking-[0.12em] text-green-700'>
-                  {item.category}
-                </p>
-                <h3 className='mt-2 text-xl font-bold leading-tight text-gray-950'>
-                  {item.name}
+            return (
+              <div key={group}>
+                <h3 className='text-lg font-bold tracking-tight text-gray-950 sm:text-xl'>
+                  {group}
                 </h3>
-                <p className='mt-3 text-sm leading-relaxed text-gray-600'>
-                  {item.description}
-                </p>
 
-                <div className='mt-auto pt-5'>
-                  <div className='rounded-xl border border-gray-200 bg-gray-50 px-4 py-3'>
-                    <p className='text-lg font-bold text-gray-950'>
-                      {item.price}
-                    </p>
-                    {item.note ? (
-                      <p className='mt-1 text-xs leading-relaxed text-gray-500'>
-                        {item.note}
-                      </p>
-                    ) : null}
-                  </div>
-                </div>
-
-                <a
-                  href={createEquipmentWhatsappUrl(item.name)}
-                  className='mt-5 inline-flex min-h-11 items-center justify-center rounded-xl bg-green-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200'
+                <div
+                  className={`mt-4 grid gap-5 sm:grid-cols-2 lg:gap-7 ${
+                    groupItems.length === 3 ? 'lg:grid-cols-3' : ''
+                  }`}
                 >
-                  Check Availability
-                </a>
+                  {groupItems.map((item) => (
+                    <article
+                      key={item.name}
+                      className={`flex h-full flex-col overflow-hidden rounded-2xl border bg-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none ${
+                        item.featured
+                          ? 'border-orange-100 shadow-orange-900/5'
+                          : 'border-gray-200'
+                      }`}
+                    >
+                      <div className='border-b border-gray-100 bg-gray-50'>
+                        <Image
+                          src={item.image}
+                          alt={item.alt}
+                          width={item.width}
+                          height={item.height}
+                          className='block h-auto w-full object-contain'
+                          sizes='(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'
+                        />
+                      </div>
+
+                      <div className='flex flex-1 flex-col p-5 sm:p-6'>
+                        <p className='text-xs font-bold uppercase tracking-[0.12em] text-green-700'>
+                          {item.category}
+                        </p>
+
+                        <div className='mt-2'>
+                          <h4 className='text-xl font-bold leading-tight text-gray-950'>
+                            {item.name}
+                          </h4>
+
+                          <p className='mt-1 text-base font-bold leading-tight text-gray-950'>
+                            {item.price}
+                          </p>
+                        </div>
+
+                        <p className='mt-3 text-sm leading-relaxed text-gray-600'>
+                          {item.description}
+                        </p>
+
+                        {item.note ? (
+                          <p className='mt-2 text-xs leading-relaxed text-gray-500'>
+                            {item.note}
+                          </p>
+                        ) : null}
+
+                        <div className='mt-auto pt-5'>
+                          <a
+                            href={createEquipmentWhatsappUrl(item.name)}
+                            className='inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-green-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200'
+                          >
+                            Check Availability
+                          </a>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -347,16 +391,17 @@ export default function BarimaRentalsHome() {
         id='transportation'
         className='scroll-mt-36 bg-gray-50 py-16 sm:scroll-mt-28 sm:py-20'
       >
-        <div className='max-w-5xl mx-auto px-5 sm:px-6'>
-          <div className='text-center max-w-3xl mx-auto'>
+        <div className='mx-auto max-w-5xl px-5 sm:px-6'>
+          <div className='mx-auto max-w-3xl text-center'>
             <h2 className='text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl'>
               Transportation Solutions
             </h2>
-            <p className='mt-4 text-sm sm:text-base leading-relaxed text-gray-600'>
+
+            <p className='mt-4 text-sm leading-relaxed text-gray-600 sm:text-base'>
               Barima Rentals assists with transportation and logistics needs for
-              construction projects, equipment moves, goods transport and
-              job-site coordination across Georgetown and surrounding areas in
-              Guyana.
+              construction materials, equipment, goods, barrels, household
+              items, signs, deliveries and job-site coordination across
+              Georgetown and surrounding areas in Guyana.
             </p>
           </div>
 
@@ -365,6 +410,9 @@ export default function BarimaRentalsHome() {
               'Construction material transport',
               'Equipment transport',
               'Goods transport',
+              'Barrel transport',
+              'Household item transport',
+              'Sign transport',
               'Job-site logistics support',
               'Delivery services',
             ].map((service) => (
@@ -383,6 +431,7 @@ export default function BarimaRentalsHome() {
             <h3 className='border-l-4 border-green-500 pl-4 font-semibold text-gray-950'>
               Advance Booking Recommended
             </h3>
+
             <p className='mt-2 text-sm leading-relaxed text-gray-700'>
               Customers are encouraged to book transportation ahead of time to
               support better scheduling, equipment availability, efficient
@@ -403,12 +452,12 @@ export default function BarimaRentalsHome() {
 
       {/* WHY CHOOSE US */}
       <section className='bg-white py-16 sm:py-20'>
-        <div className='max-w-6xl mx-auto px-5 sm:px-6'>
+        <div className='mx-auto max-w-6xl px-5 sm:px-6'>
           <h2 className='mb-10 text-center text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl'>
             Why Choose Barima Rentals?
           </h2>
 
-          <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6'>
+          <div className='grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3'>
             {trustItems.map((item) => (
               <div
                 key={item.title}
@@ -428,6 +477,7 @@ export default function BarimaRentalsHome() {
                     {item.icon}
                   </svg>
                 </div>
+
                 <h3 className='font-semibold leading-snug text-gray-950'>
                   {item.title}
                 </h3>
@@ -436,20 +486,22 @@ export default function BarimaRentalsHome() {
           </div>
         </div>
       </section>
+
       <section
         id='locations'
         className='scroll-mt-36 bg-gray-50 py-16 sm:scroll-mt-28 sm:py-20'
       >
-        <div className='max-w-5xl mx-auto px-6 text-center'>
+        <div className='mx-auto max-w-5xl px-6 text-center'>
           <h2 className='mb-10 text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl'>
             Our Locations
           </h2>
 
-          <div className='grid md:grid-cols-2 gap-8 text-left'>
+          <div className='grid gap-8 text-left md:grid-cols-2'>
             <div className='rounded-2xl border border-gray-200 bg-white p-6 shadow-sm'>
               <h3 className='text-lg font-semibold text-gray-950'>
                 Kitty Location
               </h3>
+
               <a
                 href='https://maps.app.goo.gl/q9DfoZSDfBAbQWnV6'
                 className='mt-3 inline-block text-sm font-semibold text-green-700 hover:text-green-800 hover:underline'
@@ -470,6 +522,7 @@ export default function BarimaRentalsHome() {
               <h3 className='text-lg font-semibold text-gray-950'>
                 Liliendaal Location
               </h3>
+
               <a
                 href='https://maps.app.goo.gl/4hjQoFZJiu8mbnno6'
                 className='mt-3 inline-block text-sm font-semibold text-green-700 hover:text-green-800 hover:underline'
@@ -498,8 +551,10 @@ export default function BarimaRentalsHome() {
         <h2 className='text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl'>
           Contact Us
         </h2>
+
         <p className='mt-4 text-gray-700'>Georgetown, Guyana</p>
-        <p className='mt-3 text-sm text-gray-600 max-w-md mx-auto leading-relaxed'>
+
+        <p className='mx-auto mt-3 max-w-md text-sm leading-relaxed text-gray-600'>
           For faster booking, send the equipment needed, location, date and
           rental duration.
         </p>
@@ -524,6 +579,7 @@ export default function BarimaRentalsHome() {
       <footer className='bg-gray-900 px-5 py-8 text-center text-white'>
         <div className='mx-auto max-w-4xl'>
           <p className='text-lg font-semibold'>Barima Rentals</p>
+
           <p className='mt-2 text-sm leading-relaxed text-gray-400'>
             Formerly CF Rentals. Serving Georgetown and surrounding areas in
             Guyana with reliable construction equipment rentals and transport
@@ -553,10 +609,11 @@ export default function BarimaRentalsHome() {
       <a
         href={`tel:${phoneNumber}`}
         aria-label='Call Barima Rentals'
-        className='fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-900 text-white shadow-md ring-1 ring-white/80 transition hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-green-300 sm:bottom-6 sm:right-6 sm:h-auto sm:w-auto sm:px-4 sm:py-2.5 call-pulse'
+        className='call-pulse fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-900 text-white shadow-md ring-1 ring-white/80 transition hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-green-300 sm:bottom-6 sm:right-6 sm:h-auto sm:w-auto sm:px-4 sm:py-2.5'
       >
         <span className='text-lg leading-none sm:hidden'>☎</span>
-        <span className='hidden sm:inline font-semibold'>Call 627-5775</span>
+
+        <span className='hidden font-semibold sm:inline'>Call 627-5775</span>
       </a>
     </main>
   );
