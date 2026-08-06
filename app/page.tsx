@@ -9,9 +9,9 @@ const trustItems = [
     ),
   },
   {
-    title: 'Delivery & Pickup Available',
+    title: 'Advance Booking & Reliable Scheduling',
     icon: (
-      <path d='M3 7h11v8H3V7Zm11 3h3.5L21 13.5V15h-7v-5ZM6.5 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z' />
+      <path d='M7 3v3M17 3v3M4 8h16M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm4 9 2 2 4-4' />
     ),
   },
   {
@@ -131,6 +131,45 @@ const equipmentGroups = [
   'Compaction Equipment',
 ];
 
+const transportItems = [
+  {
+    title: 'Hiab Crane Transport',
+    image: '/images/hiab-crane-canter.png',
+    width: 1371,
+    height: 850,
+    alt: 'Hiab crane canter truck for lifting and transport services from Barima Rentals',
+    description:
+      'Lifting and transport support for equipment, materials, signs and other heavy or difficult-to-handle loads.',
+    buttonText: 'Book Hiab Transport',
+    message:
+      'Hello Barima Rentals, I would like to book the Hiab crane truck. Pickup location: [location]. Delivery location: [location]. Date needed: [date]. Please let me know what other details you need.',
+  },
+  {
+    title: 'Enclosed Canter Transport',
+    image: '/images/box-enclosed-canter.png',
+    width: 1448,
+    height: 1086,
+    alt: 'Enclosed box canter truck for protected transport from Barima Rentals',
+    description:
+      'Enclosed transport for dry goods, household items and loads requiring added protection while in transit.',
+    buttonText: 'Book Enclosed Transport',
+    message:
+      'Hello Barima Rentals, I would like to book the enclosed canter. Pickup location: [location]. Delivery location: [location]. Date needed: [date]. Please let me know what other details you need.',
+  },
+  {
+    title: 'Powergate Canter Transport',
+    image: '/images/powergate-tailgate-canter.jpg',
+    width: 473,
+    height: 467,
+    alt: 'Powergate tailgate canter truck for loading and transport from Barima Rentals',
+    description:
+      'Suitable for equipment, appliances and heavier items that benefit from powered loading and unloading.',
+    buttonText: 'Book Powergate Transport',
+    message:
+      'Hello Barima Rentals, I would like to book the powergate canter. Pickup location: [location]. Delivery location: [location]. Date needed: [date]. Please let me know what other details you need.',
+  },
+];
+
 export default function BarimaRentalsHome() {
   const phoneNumber = '+5926275775';
   const whatsappUrl =
@@ -140,6 +179,9 @@ export default function BarimaRentalsHome() {
     `https://wa.me/5926275775?text=${encodeURIComponent(
       `Hello Barima Rentals, I'd like to check availability for ${equipmentName}.`,
     )}`;
+
+  const createTransportWhatsappUrl = (message: string) =>
+    `https://wa.me/5926275775?text=${encodeURIComponent(message)}`;
 
   return (
     <main className='min-h-screen overflow-x-clip bg-gray-50 pb-20 pt-[calc(env(safe-area-inset-top,0px)+2.5rem)] text-gray-800 sm:pb-0 md:pt-0'>
@@ -186,12 +228,7 @@ export default function BarimaRentalsHome() {
                 </p>
 
                 <p className='text-xs text-gray-200 sm:text-sm md:text-xs lg:text-sm'>
-                  <span className='text-orange-400'>Formerly CF Rentals</span>
-
-                  <span className='hidden lg:inline'>
-                    {' '}
-                    • Equipment Rental & Logistics Solutions
-                  </span>
+                  Equipment Rental & Logistics Solutions
                 </p>
               </div>
             </div>
@@ -382,54 +419,52 @@ export default function BarimaRentalsHome() {
             </h2>
 
             <p className='mt-4 text-sm leading-relaxed text-gray-600 sm:text-base'>
-              Barima Rentals assists with transportation and logistics needs for
-              construction materials, equipment, goods, barrels, household
-              items, signs, deliveries and job-site coordination across
-              Georgetown and surrounding areas in Guyana.
+              Reliable transport for equipment, materials, household moves,
+              goods and signs across Georgetown and surrounding areas.
             </p>
           </div>
 
-          <div className='mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
-            {[
-              'Construction material transport',
-              'Equipment transport',
-              'Goods transport',
-              'Barrel transport',
-              'Household item transport',
-              'Sign transport',
-              'Job-site logistics support',
-              'Delivery services',
-            ].map((service) => (
-              <div
-                key={service}
-                className='rounded-xl border border-gray-200 bg-white p-5 text-center shadow-sm'
+          <div className='mx-auto mt-5 max-w-xl rounded-xl border border-orange-200 bg-orange-50 px-4 py-2 text-center text-sm font-semibold text-orange-800'>
+            Advance booking is recommended for timely service.
+          </div>
+
+          <div className='mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-7'>
+            {transportItems.map((item) => (
+              <article
+                key={item.title}
+                className='flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none'
               >
-                <h3 className='font-semibold leading-snug text-gray-950'>
-                  {service}
-                </h3>
-              </div>
+                <div className='border-b border-gray-100 bg-gray-50'>
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    width={item.width}
+                    height={item.height}
+                    className='block h-auto w-full object-contain'
+                    sizes='(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+                  />
+                </div>
+
+                <div className='flex flex-1 flex-col p-5 sm:p-6'>
+                  <h3 className='text-xl font-bold leading-tight text-gray-950'>
+                    {item.title}
+                  </h3>
+
+                  <p className='mt-3 text-sm leading-relaxed text-gray-600'>
+                    {item.description}
+                  </p>
+
+                  <div className='mt-auto pt-5'>
+                    <a
+                      href={createTransportWhatsappUrl(item.message)}
+                      className='inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-green-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200'
+                    >
+                      {item.buttonText}
+                    </a>
+                  </div>
+                </div>
+              </article>
             ))}
-          </div>
-
-          <div className='mt-10 rounded-2xl border border-green-100 bg-white p-5 shadow-sm sm:p-6'>
-            <h3 className='border-l-4 border-green-500 pl-4 font-semibold text-gray-950'>
-              Advance Booking Recommended
-            </h3>
-
-            <p className='mt-2 text-sm leading-relaxed text-gray-700'>
-              Customers are encouraged to book transportation ahead of time to
-              support better scheduling, equipment availability, efficient
-              planning and timely service.
-            </p>
-          </div>
-
-          <div className='mt-8 text-center'>
-            <a
-              href={whatsappUrl}
-              className='inline-flex min-h-12 items-center justify-center rounded-xl bg-green-600 px-8 py-3 font-semibold text-white transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200'
-            >
-              Arrange Transport on WhatsApp
-            </a>
           </div>
         </div>
       </section>
@@ -450,11 +485,11 @@ export default function BarimaRentalsHome() {
             </p>
 
             <p className='rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm'>
-              3. We confirm the booking and total cost
+              3. Delivery or pickup is scheduled
             </p>
 
             <p className='rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm'>
-              4. Delivery or pickup is scheduled
+              4. We confirm the booking details and total cost
             </p>
           </div>
         </div>
@@ -569,6 +604,16 @@ export default function BarimaRentalsHome() {
           rental duration.
         </p>
 
+        <div className='mx-auto mt-5 max-w-md rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 text-sm text-gray-700'>
+          <h3 className='font-semibold text-gray-950'>Opening Hours</h3>
+
+          <p className='mt-2'>Monday–Friday: 8:00 a.m.–5:00 p.m.</p>
+
+          <p>Saturday: Closed</p>
+
+          <p>Sunday: 10:00 a.m.–4:00 p.m.</p>
+        </div>
+
         <div className='mt-6 flex flex-col items-center gap-4'>
           <a
             href={whatsappUrl}
@@ -578,7 +623,7 @@ export default function BarimaRentalsHome() {
           </a>
 
           <a
-            href='mailto:clevelandforde@yahoo.com'
+            href='mailto:hello@barimarentals.com'
             className='inline-flex min-h-12 w-full max-w-xs items-center justify-center rounded-xl bg-green-600 px-6 py-3 font-semibold text-white transition hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200'
           >
             Send Email
@@ -591,9 +636,8 @@ export default function BarimaRentalsHome() {
           <p className='text-lg font-semibold'>Barima Rentals</p>
 
           <p className='mt-2 text-sm leading-relaxed text-gray-400'>
-            Formerly CF Rentals. Serving Georgetown and surrounding areas in
-            Guyana with reliable construction equipment rentals and transport
-            solutions.
+            Serving Georgetown and surrounding areas in Guyana with reliable
+            construction equipment rentals and transport solutions.
           </p>
 
           <p className='mt-3 text-sm'>Construction Equipment Rentals</p>

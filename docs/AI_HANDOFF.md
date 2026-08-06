@@ -14,7 +14,7 @@
 
 ## Active Phase
 
-Main local homepage CTA, equipment wording, and section-order refinement.
+Main local transportation, contact, and visible brand wording refinement.
 
 ## Phase Checklist
 
@@ -148,7 +148,18 @@ Main local homepage CTA, equipment wording, and section-order refinement.
 - Plate compactor alternate wording remains on its card.
 - Equipment now appears directly after the hero.
 - How to Book was moved below Transportation Solutions and made more compact.
-- No commit, push, or deployment has occurred for this refinement.
+- Visible "Formerly CF Rentals" wording was removed from the homepage header and footer; machine-readable `alternateName` remains unchanged.
+- Header now shows "Barima Rentals" with the secondary tagline "Equipment Rental & Logistics Solutions".
+- Public email is now `hello@barimarentals.com`.
+- Transportation section now uses three real truck cards: Hiab Crane Transport, Enclosed Canter Transport and Powergate Canter Transport.
+- Each truck card has a specific WhatsApp booking message.
+- Generic transport service boxes were removed.
+- The general "Arrange Transport on WhatsApp" button was removed because truck cards now have their own booking buttons.
+- A single transportation advance-booking notice remains: "Advance booking is recommended for timely service."
+- Public opening hours were added visibly in the Contact section: Monday-Friday 8:00 a.m.-5:00 p.m.; Saturday-Sunday closed.
+- How to Book steps 3 and 4 were reordered; step 4 now says "We confirm the booking details and total cost".
+- "Delivery & Pickup Available" was replaced with "Advance Booking & Reliable Scheduling" in the Why Choose cards.
+- Opening hours now show Monday-Friday 8:00 a.m.-5:00 p.m.; Saturday closed; Sunday 10:00 a.m.-4:00 p.m.
 
 ## Validation Commands And Results
 
