@@ -177,7 +177,7 @@ export default function BarimaRentalsHome() {
 
   const createEquipmentWhatsappUrl = (equipmentName: string) =>
     `https://wa.me/5926275775?text=${encodeURIComponent(
-      `Hello Barima Rentals, I'd like to check availability for ${equipmentName}.`,
+      `Hello Barima Rentals, I would like to book the ${equipmentName}. Date needed: [date]. Number of days: [duration]. Delivery location: [location]. Please confirm the booking details and total cost.`,
     )}`;
 
   const createTransportWhatsappUrl = (message: string) =>
