@@ -159,7 +159,7 @@ Main local transportation, contact, and visible brand wording refinement.
 - Public opening hours were added visibly in the Contact section: Monday-Friday 8:00 a.m.-5:00 p.m.; Saturday-Sunday closed.
 - How to Book steps 3 and 4 were reordered; step 4 now says "We confirm the booking details and total cost".
 - "Delivery & Pickup Available" was replaced with "Advance Booking & Reliable Scheduling" in the Why Choose cards.
-- Opening hours now show Monday-Friday 8:00 a.m.-5:00 p.m.; Saturday closed; Sunday 10:00 a.m.-4:00 p.m.
+- Opening hours now show Monday-Friday 8:00 a.m.-5:00 p.m.; Saturday closed; Sunday 9:00 a.m.-4:00 p.m.
 
 ## Validation Commands And Results
 

@@ -611,7 +611,7 @@ export default function BarimaRentalsHome() {
 
           <p>Saturday: Closed</p>
 
-          <p>Sunday: 10:00 a.m.–4:00 p.m.</p>
+          <p>Sunday: 9:00 a.m.–4:00 p.m.</p>
         </div>
 
         <div className='mt-6 flex flex-col items-center gap-4'>
