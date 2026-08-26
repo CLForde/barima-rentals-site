@@ -97,6 +97,11 @@ Main local transportation, contact, and visible brand wording refinement.
 - Standalone Pricing section and Pricing navigation link were removed; card prices remain unchanged.
 - Added subtle footer wording: "Powered by Barima Venture".
 - `modern-redesign` remains separate and untouched by this main-branch production correction.
+- Added a new 500L Concrete Mixer card using `/images/500l-concrete-mixer.jpg`.
+- Concrete mixer order is now 500L, 450L, 400L, then 350L.
+- 500L Concrete Mixer price is G$35,000/day.
+- 500L Concrete Mixer supporting note says "Better rates available for longer-term rentals."
+- All other homepage equipment groups remained intact.
 - Visible "core offering" wording was manually removed and preserved.
 - 3ft Scaffolding card image now uses the full card width with the complete original photograph preserved.
 - Equipment prices now appear with equipment names instead of in bottom price boxes.

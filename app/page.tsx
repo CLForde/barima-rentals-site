@@ -70,6 +70,20 @@ const equipmentItems = [
   {
     group: 'Concrete Mixers',
     category: 'Concrete Mixer',
+    name: '500L Concrete Mixer',
+    image: '/images/500l-concrete-mixer.jpg',
+    width: 1152,
+    height: 710,
+    alt: '500L concrete mixer rental from Barima Rentals',
+    description:
+      'Reliable higher-volume concrete mixing for bigger jobs and active site use.',
+    price: 'G$35,000/day',
+    note: 'Better rates available for longer-term rentals.',
+    featured: true,
+  },
+  {
+    group: 'Concrete Mixers',
+    category: 'Concrete Mixer',
     name: '450L Concrete Mixer',
     image: '/images/450l-concrete-mixer.PNG',
     width: 1167,
